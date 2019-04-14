@@ -37,7 +37,10 @@ namespace BigONotationPartial
         int CountUniqueIPs()
         {
             var logReader = new LogReader();
-            var ipsSeen = new List<string>();
+            //var ipsSeen = new List<string>();
+
+            //HashSet : utiliza una tabla hash, por lo que las búsquedas son extremadamente rápidas.
+            var ipsSeen = new HashSet<String>();
             foreach (var logLine in logReader)
             {
                 var ip = logLine.GetIP();
